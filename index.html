@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>4 special girl</title>
+        
+    </head>
+    <body>
+        <div class='position-absolute top-50 start-50 translate-middle'>
+            <button id='button' class='btn btn-primary btn-lg' onclick='mulai()'>Pencet sini gblk</button>
+            <div id='iloveyou' style='display: none;'>
+                <a href="https://staz7.github.io/stazty/">
+            </div>
+        </div>
+        <span id='hati' class='fixed-bottom text-center my-3' onclick='hati()'></span>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+        <script type="text/javascript">
+            const author = 'Stazz';
+            document.getElementById('hati').innerHTML = `Made with &#10084;&#65039; by ${author}`;
+            const swals = Swal.mixin({
+                cancelButtonColor: '#d33',
+                confirmButtonColor: '#3085d6',
+            });
+            async function mulai(){
+                await swals.fire('Haii gblk', 'gw ada pertanyaan buat lu', 'question');
+                await swals.fire('Jawab yang jujur tai!');
+                await swals.fire('bohong ga asik!!','','error');
+                var { value: nama } = await swals.fire({
+                    title: 'Masukin namamu dulu biar kek ujian',
+                    input: 'text',
+                    showCancelButton: true,
+                });
+                if(nama){
+                    var { isConfirmed: mau } = await swals.fire({
+                        title: `${nama} mau liat pacar aku yang paling cantik ga?`,
+                        confirmButtonText: 'Mau',
+                        cancelButtonText: 'Gak',
+                        showCancelButton: true,
+                    });
+                    if(mau){
+                        await swals.fire('Penasaran gaa');
+                        var { value: persen } = await swals.fire({
+                            title: 'Menurutku kamu cantiknya berapa persen?',
+                            icon: 'question',
+                            input: 'range',
+                            inputLabel: 'Antara 1-100 ya',
+                            inputAttributes: {
+                                min: 1,
+                                max: 100,
+                            },
+                            inputValue: 50
+                        });
+                        if(persen){
+                            await swals.fire(`menurut kamu ${persen}/100 ya`);
+                            await swals.fire('kalo bagi aku sih 100/100');
+                            var { isConfirmed: Lihat } = await swals.fire({
+                                title: 'Kamu lihat icon hati dibawah kan?',
+                                confirmButtonText: 'Lihat',
+                                cancelButtonText: 'Gak!',
+                                showCancelButton: true,
+                            });
+                            if(Lihat){
+                                await swals.fire('Klik la gblk iconnya');
+                                
+                            } else {
+                                await swals.fire('asu jan pura" buta');
+                                await swals.fire('udah langsung klik aja iconnya');
+                                 }
+                        }
+                    } else {
+                        //gak sayang
+                    }
+                } else {
+                    await swals.fire('isi nama anjjjj')
+                    //gak isi nama
+                }
+            }
+        function hati(){
+            document.getElementById('button').style = 'display: none';
+            document.getElementById('iloveyou').style = '';
+        }
+        </script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    </body>
+</html>
